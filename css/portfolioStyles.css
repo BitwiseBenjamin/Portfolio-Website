@@ -16,9 +16,9 @@
     --fw-reg:300;
     --fw-bold: 900;
 
-    --clr-light: #FFFEF2;
-    --clr-dark: #1e3765;
-    --clr-accent: #A7D676;
+    --clr-light: white;
+    --clr-dark: #1f1f1f;
+    --clr-accent: #2d2d2d;
 
     /*
     base colors
@@ -47,7 +47,7 @@
         }
   }
 
-  /*general styls*/
+  /*general styles*/
 
   ul{
     list-style: none;
@@ -59,17 +59,19 @@
   }
 
   header{
-    background-color:#1b325d;
+    background-color:#292828;
   }
 
 
   body{
     background: var(--clr-dark);
     color: var(--clr-light);
-    margin: 0;
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
     line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      padding-top: calc(3em + 1px); /* Adjust based on header height and border */
   }
 
   section{
@@ -122,10 +124,10 @@
   color: #6495ED;
   }
   .classes{
-color: aqua;
+  color: aqua;
   }
  .quotes{
-  color: #FA8072;
+  color: #d15e52;
   }
   
 
@@ -228,15 +230,21 @@ color: aqua;
 
   /* header ***********************************************/
  
-header{
+  header {
     display: flex;
     justify-content: space-between;
     padding: 1em;
+    position: fixed;
+    top: 0; /* Ensure it stays at the top */
+    left: 0; /* Ensure it spans the full width */
+    right: 0; /* Ensure it spans the full width */
+     /* Add background color to avoid transparency issues */
+    z-index: 1000; /* High z-index to stay on top of other elements */
 }
   .logo {
     max-width: 100px;
     font-size:var(--fs-h3);
-    color: var(--clr-accent);
+    color: var(--clr-light);
   }
 
 .nav{
@@ -326,7 +334,7 @@ header{
 .hamburger,
 .hamburger::before,
 .hamburger::after{
-    background: var(--clr-accent);
+    background: var(--clr-light);
     width: 2em;
     height: 3px;
     border-radius: 1em;
@@ -424,21 +432,21 @@ header{
     margin-top: 0.5em;
   }
   .my-experiences1 {
-    background-color: #f9e2ae;
+    background-color: #434242;
     background-size: cover;
-   color:#005e62;
+   color:#ffffff;
     }
 
     .my-experiences2{
-      background-color: #fbc78d;
+      background-color: #363535;
      background-size: cover;
-     color: #005e62;
+     color: #ffffff;
       }
 
       .my-experiences3{
-        background-color: #a7d676;
+        background-color: #323131;
         background-size: cover;
-        color: #005e62;
+        color: #ffffff;
       }
       
     .internship__title .elements,
@@ -448,14 +456,14 @@ header{
     .about-me  .classes,
     .about-me  .quotes
   {
-      opacity: 60%;
+      opacity: 80%;
     }
 
     
   
 
   .section__title--experiences {
-    color: #005e62;
+    color: #ffffff;
     position: relative;
     text-align: center;
     margin-top: -0.3em;
@@ -474,7 +482,7 @@ header{
     position: relative;
     text-align: center;
   }
-
+/*
   .internship__title::after, .education__title::after {
     content: '';
     display: block;
@@ -483,14 +491,7 @@ header{
     margin: -.5em auto -.5em;
     background: var(--clr-light);
   }
-  .internship__title::before, .education__title::before {
-    content: '';
-    display: block;
-    width: 50em;
-    height: 3px;
-    margin: -.5em auto -.5em;
-    background: var(--clr-light);
-  }
+  */
 
   .experience{
     margin: 0 auto;
@@ -551,7 +552,7 @@ padding-bottom: 0.8em;
 }
 
 .education__status{
-  color:#005e62;
+  color: var(--clr-light);
 }
 
 
@@ -564,7 +565,7 @@ padding-bottom: 0.8em;
 .experience .classes, 
 .experience .quotes, 
 .experience .elements{
-  opacity: 60%;
+  opacity: 80%;
 }
 
 
@@ -613,14 +614,14 @@ min-width:400px;
 /* Portfolio *********************************************/
 
 .section__title--portfolio{
-    color:#005e62;
+    color:var(--clr-light);
     font-weight: var(--fw-bold);
     font-size: 4em;
 
 }
 
 .my-portfolio{
-    background-color: #fbc78d;
+    background-color: var(--clr-dark);
     color: var(--clr-light);
     text-align: center;
 }
@@ -660,8 +661,8 @@ min-width:400px;
 /* footer *****************************************************/
 
 .footer{
-    background: #A8Dee0;
-    color: var(--clr-dark);
+    background: var(--clr-accent);
+    color: var(--clr-light);
     text-align: center;
     padding: 0.5em;
     font-size: var(--fs-h3);
@@ -718,7 +719,7 @@ opacity: .7;
 }
 
 .intro__projects{
-background-color: #005e62;
+background-color: var(--clr-dark);
 }
 .intro__img--projects{
   margin-left: auto;
