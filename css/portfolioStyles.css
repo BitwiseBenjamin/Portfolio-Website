@@ -117,6 +117,203 @@
     transform: scale(1.1);
   }
 
+
+/*file exloerer */
+
+.file-explorer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: Arial, sans-serif;
+  background: #292828;
+  border: 1px solid #292828;
+  width: 200px;
+  height: 100%;
+  padding: 0;
+  box-shadow: 2px2px5pxrgba(0, 0, 0, 0.1);
+  margin-top: 85px;
+  margin-left: 50px;
+  z-index: 1000;
+}
+
+.file-explorer__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.file-explorer__file {
+  display: flex;                
+  align-items: center;               
+}
+/*
+.file-explorer__file i {
+  margin-right: 10px;             
+}*/
+
+.file-explorer__item {
+  margin-bottom: 0;
+}
+
+.file-explorer__folder {
+  cursor: pointer;
+  padding: 0px;
+  background: #292828;
+  border: 1px solid #292828;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.folder-icon {
+  margin-right: 10px;
+}
+
+.file-explorer__sublist {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 50px;
+  display: none; /* Hide sublist by default */
+
+}
+
+.file-explorer__file a {
+  text-decoration: none;
+  color: #ddd;
+}
+
+.file-explorer__filea:hover {
+  text-decoration: underline;
+}
+
+.file-explorer__chevron {
+  margin-left: 20px;
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+  color: #fff; /* Ensure chevrons are visible */
+}
+
+/* Rotate chevron when sublist is visible */
+.file-explorer__folder.open.file-explorer__chevron {
+  transform: rotate(90deg);
+}
+
+.file-explorer__folder:hover {
+  background-color: #333;        /* Slightly lighter background on hover */
+}
+
+.file-explorer__file:hover {
+  background-color: #333;        /* Slightly lighter background on hover */
+}
+
+
+
+  /* sidebar */
+  /* Basic reset for sidebar */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50px; /* Width of the sidebar */
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000; /* Make sure the sidebar is above other content */
+  margin-top: 85px;
+  
+}
+
+.sidebar__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.sidebar__item {
+  width: 100%;
+}
+
+.sidebar__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px; /* Height of each item */
+  color: rgb(147, 146, 146);
+  text-decoration: none;
+  font-size: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar__link:hover {
+  background-color: #555;
+  color: #fff;
+}
+
+.sidebar__text {
+  display: none; /* Hide text on small screens */
+}
+
+.sidebar__link i {
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+      width: 50px; /* Increase width for larger screens */
+  }
+
+  .sidebar__text {
+      display: inline; /* Show text on larger screens */
+      margin-left: 10px;
+  }
+}
+
+/*extra file navigator */
+
+.outer_file{
+  margin-left: 37px;
+}
+
+.outer_file a{
+  color: white;
+  text-decoration: none;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.main_file {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.outer_file_main {
+  margin-left: 5px;
+}
+
+.outer_file_main i {
+  margin-right: 10px;
+}
+
+.file-name {
+  white-space: nowrap;       
+  overflow: hidden;       
+  text-overflow: ellipsis;  
+}
+
+
   /* animation texts ***************************************/
 
   
