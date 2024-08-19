@@ -1,0 +1,9 @@
+.content-window {
+    position: fixed;
+    top: 45px; /* Height of the tab container */
+    left: 250px; /* Width of the sidebar */
+    width: calc(100vw - 250px); /* Full width minus the sidebar */
+    height: calc(100vh - 45px); /* Full height minus the tab container */
+    overflow: auto; /* Allow scrolling if content overflows */
+    z-index: 1000;
+}
