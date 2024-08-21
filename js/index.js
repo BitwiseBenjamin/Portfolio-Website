@@ -32,20 +32,63 @@ document.addEventListener('DOMContentLoaded', function() {
             // Toggle the 'open' class on the folder
             this.classList.toggle('open');
 
+       
+            if(caret){
             // Ensure caret rotation is applied correctly
             if (this.classList.contains('open')) {
                 caret.style.transform = 'rotate(90deg)';
             } else {
                 caret.style.transform = 'rotate(0deg)';
             }
+        }
+
+            
         });
     });
 });
 
 
+
+window.addEventListener('DOMContentLoaded', addTabingToPortfolioItems)
+
+
+
+function addTabingToPortfolioItems() {
+    const portfolioItems = document.querySelectorAll('.portfolio__item');
+    
+    console.log('Portfolio items:', portfolioItems);  // Log portfolio items for debugging
+    
+    if (portfolioItems.length > 0) {
+        portfolioItems.forEach(item => {
+            item.addEventListener('click', function(event) {
+                event.preventDefault();  // Prevent default link behavior
+                
+                // Use the item text as the tab name
+                const fileName = this.textContent.trim();
+                console.log('Clicked item:', fileName);  // Log clicked item for debugging
+                
+                // Get the href attribute of the anchor
+                const fileUrl = this.getAttribute('href');
+                console.log('File URL:', fileUrl);  // Log file URL for debugging
+                
+                // Create the icon for the tab
+                const iconCss = document.createElement('div');
+                iconCss.className = 'icon';
+                iconCss.innerHTML = '<i class="fa-brands fa-css3-alt" style="color: rgb(44, 130, 251);"></i>';
+                
+                // Create the new tab
+                createTab(iconCss, fileName, fileUrl);
+            });
+        });
+    } else {
+        console.error('No portfolio items found.');
+    }
+}
+
+
 const tabContainer = document.querySelector('.tab-container');
 
-function createTab(iconDiv, fileName, fileUrl,) {
+function createTab(iconDiv, fileName, fileUrl) {
     // Create the tab div
     const tabDiv = document.createElement('div');
     tabDiv.className = 'tab';
@@ -90,12 +133,8 @@ function createTab(iconDiv, fileName, fileUrl,) {
     });
 
     tabLink.addEventListener('click', function(event) {
-        if (tabLink.href.includes(window.location.origin) && tabLink.hash) {
-            event.preventDefault();  // Prevent default anchor behavior
-            document.querySelector(tabLink.hash).scrollIntoView({ behavior: 'smooth' });  // Smooth scroll to section
-            history.pushState(null, null, tabLink.hash);
-            highlightActiveTab();
-        }
+        event.preventDefault(); // Prevent default anchor behavior
+        loadContent(event, fileUrl); // Load content via AJAX
     });
 
     highlightActiveTab();  // Highlight the new tab
@@ -134,13 +173,6 @@ const iconJs = document.createElement('div');
 iconJs.className = 'icon';
 iconJs.innerHTML = '<i class="fa-solid fa-j fa-2xs" style="color: rgb(255, 247, 0);"></i> <i class="fa-solid fa-s fa-2xs" style="color: rgb(255, 247, 0);"></i>';
 
-// Function to load initial tabs
-function loadInitialTabs() {
-    createTab(iconHtml5, 'index.html', '/index.html');
-}
-
-// Initial tab loading
-loadInitialTabs();
 
 // Example of dynamically adding a new tab when clicking a file in the file explorer
 const fileExplorerFolders = document.querySelectorAll('.file-explorer__file');
@@ -162,7 +194,94 @@ fileExplorerFolders.forEach(folder => {
     });
 });
 
+const fileExplorerFoldersIndex = document.querySelectorAll('.index');
+fileExplorerFoldersIndex.forEach(folder => {
+    folder.addEventListener('click', function() {
+        // Use the folder name as the tab name, create a URL-friendly hash
+        const fileName = this.textContent.trim();
+        const anchor = this.querySelector('a');
+        
+        // Get the href attribute of the anchor
+        const fileUrl = anchor.getAttribute('href');
+
+        
+        // Clone the icon div from the clicked folder
+        const fileIcon = this.querySelector('.icon').cloneNode(true);
+        
+        // Create the new tab
+        createTab(fileIcon, fileName, fileUrl);
+    });
+});
+
+
 
 // Handle browser back/forward navigation
 window.addEventListener('popstate', highlightActiveTab);
+
+window.addEventListener('DOMContentLoaded', highlightActiveTab)
+
+function loadContent(event, url) {
+    event.preventDefault(); // Prevent the default link behavior (which causes the refresh)
+
+    // Create a new XMLHttpRequest object
+    var xhr = new XMLHttpRequest();
+
+  
+
+    // Configure it: GET-request for the "url"
+    xhr.open('GET', url, true);
+
+    // Set up the callback function to handle the response
+    xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 300) {
+            // Create a temporary DOM element to hold the response text
+            var tempDiv = document.createElement('div');
+            tempDiv.innerHTML = xhr.responseText;
+
+            // Extract the content you want to load (e.g., from a div with id="content")
+            var newContent = tempDiv.querySelector('.content-window').innerHTML;
+
+            // Replace the content of the existing #content div with the new content
+            document.querySelector('.content-window').innerHTML = newContent;
+
+            // Optionally update the browser history so the back button works
+            history.pushState(null, '', url);
+
+             // Call the function to add tabbing behavior
+             addTabingToPortfolioItems();
+
+            highlightActiveTab();
+
+            const hash = new URL(url, window.location.origin).hash;
+            if (hash) {
+                const targetElement = document.querySelector(hash);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
+
+        } else {
+            console.error('Error loading the page:', xhr.statusText);
+        }
+    };
+
+    // Handle network errors
+    xhr.onerror = function() {
+        console.error('Network Error');
+    };
+
+
+    // Send the request
+    xhr.send();
+
+    
+}
+
+// Handle browser back/forward button navigation
+window.onpopstate = function() {
+    // Load the content based on the current URL
+    loadContent({ preventDefault: () => {} }, location.pathname);
+};
+
 

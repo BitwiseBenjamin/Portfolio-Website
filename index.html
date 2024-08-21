@@ -76,11 +76,11 @@
                 </ul>
             </li>
     <li class="file-explorer__item">
-    <div class="file-explorer__folder outer_file">
+    <div class="file-explorer__folder outer_file index">
     <div class="icon">
         <i class="fa-brands fa-html5" style="color: rgb(255, 77, 0);"></i> 
     </div>
-        <a href="/index.html">index.html</a>
+        <a href="/index.html" onclick="loadContent(event, '/index.html')">index.html</a>
     </div>
     <ul class="file-explorer__sublist">
 
@@ -90,7 +90,7 @@
             <span class="file-explorer__chevron">
                 <i class="fa-solid fa-angle-right"></i>
             </span>
-            <i class="fa-brands fa-square-js folder-icon" style="color: rgb(255, 247, 0);"></i> 
+            <i class="fa-brands fa-square-js folder-icon fa-beat" style="color: rgb(255, 247, 0);"></i> 
             Navigation
     </div>
     <ul class="file-explorer__sublist">
@@ -99,21 +99,21 @@
             <i class="fa-solid fa-j fa-2xs" style="color: rgb(255, 247, 0); "></i> 
             <i class="fa-solid fa-s fa-2xs" style="color: rgb(255, 247, 0);"></i> 
             </div>
-            <a href="#experiences">Experience</a>
+            <a href="/index.html#experiences" onclick="loadContent(event, '/index.html#experiences')">Experience</a>
         </li>
         <li class="file-explorer__file">
             <div class="icon">
             <i class="fa-solid fa-j fa-2xs" style="color: rgb(255, 247, 0); "></i> 
             <i class="fa-solid fa-s fa-2xs" style="color: rgb(255, 247, 0);"></i> 
             </div>
-            <a href="#about">About Me</a>
+            <a href="/index.html#about" onclick="loadContent(event, '/index.html#about')">About Me</a>
         </li>
         <li class="file-explorer__file">
             <div class="icon">
-            <i class="fa-solid fa-j fa-2xs" style="color: rgb(255, 247, 0); "></i> 
-            <i class="fa-solid fa-s fa-2xs" style="color: rgb(255, 247, 0);"></i> 
+            <i class="fa-solid fa-j fa-2xs fa-bounce" style="color: rgb(255, 247, 0); "></i> 
+            <i class="fa-solid fa-s fa-2xs fa-bounce" style="color: rgb(255, 247, 0);"></i> 
             </div>
-            <a href="#portfolio">Projects</a>
+            <a href="/index.html#portfolio" onclick="loadContent(event, '/index.html#portfolio')">Projects</a>
         </li>
     </ul>
     </li>
@@ -122,7 +122,7 @@
         <span class="file-explorer__chevron">
             <i class="fa-solid fa-angle-right"></i>
         </span>
-        <i class="fa-solid fa-folder-open folder-icon" style="color: rgb(44, 130, 251);"></i> 
+        <i class="fa-solid fa-folder-open folder-icon fa-beat" style="color: rgb(44, 130, 251);"></i> 
         Projects
     </div>
     <ul class="file-explorer__sublist">
@@ -130,17 +130,43 @@
             <div class="icon">
             <i class="fa-brands fa-css3-alt" style="color: rgb(44, 130, 251);"></i> 
             </div>
-            <a href="html/portfolio-item1.html">Project 1</a></li>
+            <a href="/html/portfolio-item1.html" onclick="loadContent(event, '/html/portfolio-item1.html');">Portfolio Website</a>
+        </li>
         <li class="file-explorer__file">
             <div class="icon">
-            <i class="fa-brands fa-css3-alt" style="color: rgb(44, 130, 251);"></i> 
+            <i class="fa-brands fa-css3-alt " style="color: rgb(44, 130, 251);"></i> 
             </div>
-            <a href="html/portfolio-item2.html">Project 2</a></li>
+            <a href="/html/portfolio-item2.html" onclick="loadContent(event, '/html/portfolio-item2.html')">Hero Building GUI</a>
+        </li>
+        <li class="file-explorer__file">
+            <div class="icon">
+            <i class="fa-brands fa-css3-alt " style="color: rgb(44, 130, 251);"></i> 
+            </div>
+            <a href="/html/portfolio-item3.html" onclick="loadContent(event, '/html/portfolio-item3.html')">Task Manager</a>
+        </li>
+        <li class="file-explorer__file">
+            <div class="icon">
+            <i class="fa-brands fa-css3-alt fa-bounce" style="color: rgb(44, 130, 251);"></i> 
+            </div>
+            <a href="/html/portfolio-item4.html" onclick="loadContent(event, '/html/portfolio-item4.html')">AI Pacman</a>
+        </li>
+        <li class="file-explorer__file">
+            <div class="icon">
+            <i class="fa-brands fa-css3-alt " style="color: rgb(44, 130, 251);"></i> 
+            </div>
+            <a href="/html/portfolio-item5.html" onclick="loadContent(event, '/html/portfolio-item5.html')">Calculator App</a>
+        </li>
+        <li class="file-explorer__file">
+            <div class="icon">
+            <i class="fa-brands fa-css3-alt " style="color: rgb(44, 130, 251);"></i> 
+            </div>
+            <a href="/html/portfolio-item6.html" onclick="loadContent(event, '/html/portfolio-item6.html')">Chat Application</a>
+        </li>
         <!-- Add more projects as needed -->
     </ul>
     </li><!-- Add more folders and files as needed -->
 
-    <li class="file-explorer__item">
+    <li class="file-explorer__item media-folder-file">
         <div class="file-explorer__folder">
             <span class="file-explorer__chevron">
                 <i class="fa-solid fa-angle-right"></i>
@@ -149,13 +175,13 @@
             Media
         </div>
         <ul class="file-explorer__sublist">
-            <li class="file-explorer__file">
+            <li class="file-explorer__file media-folder-file">
                 <div class="icon">
                 <i class="fa-solid fa-image" style="color: rgb(4, 210, 148);"></i> 
                 </div>
                 <div class="file-name">Main.png</div>
             </li>
-            <li class="file-explorer__file">
+            <li class="file-explorer__file media-folder-file">
                 <div class="icon">
                 <i class="fa-solid fa-image" style="color: rgb(4, 210, 148);"></i> 
                 </div>
@@ -221,6 +247,18 @@
     <!-- Header of tabs -->
         
         <div class="tab-container">
+            <div class="tab " style="position: relative; display: flex; justify-content: space-between; align-items: center;">
+                
+                    
+                    <a class="tab-link" href="/index.html" onclick="loadContent(event, '/index.html')">
+                        <i class="fa-brands fa-html5" style="color: rgb(255, 77, 0);"></i> 
+                        index.html
+                    </a>
+                
+                <span class="close-tab">
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+            </div>
         </div>
     
 
@@ -231,25 +269,30 @@
         <section class="intro" ID="home">
             <p class="line-1 anim-typewriter1">
 
+               <span class="line-1-hi">
                &lt;<span class="elements">h1</span>
                <span class="classes">class</span>
                =
                <span class="quotes">"title"</span>&gt;
                <span class="section__title--intro intro--2">Hi, I'm </span>
-               
-                
+               </span>
+
+                <span class="line-1-name">
                 &lt;<span class="elements">span</span>&gt;
 
                 <strong class=" section__title--intro">Zachary Rundstrom</strong>
 
                 &lt;/<span class="elements">span</span>&gt;
                 &lt;/<span class="elements">h1</span>&gt;
+                </span>
             </p>
 
             <p class="line-1 anim-typewriter2 section__sub">
+                <span>
                 &lt;<span class="elements">p</span> <span class="classes">class</span>=<span class="quotes">"subtitle"</span>
                 &gt; <strong class="section__subtitle--intro">Software Engineer</strong>
                 &lt;/<span class="elements">p</span>&gt;
+                </span>
             </p>
 
 
@@ -295,11 +338,13 @@
             <div class="experiences">
 
                 <div class="experience">
+
+                   
                     
-                    &lt;<span class="elements">p</span><span class="classes"> class</span>=
+                    &lt;<span class="elements">div</span><span class="classes"> class</span>=
                     <span class="quotes intern__element">"degree"</span>&gt;
                         <ul>
-                            <h3>Arizona State University</h3>
+                            <img src="Pictures/kisspng-arizona-state-university-arizona-state-sun-devils-student-webinar-series-nimesh-bumb-collegepond-5b6dfeb40fdac2.082525231533935284065.png" alt="mcc" class="education__img">
                             <p class="education__major">
                                 Bachelors of Computer Science 
                             </p>
@@ -308,16 +353,19 @@
                                 -December 2024
                             </li>
                         </ul>
-                        &lt;/<span class="elements">p</span>&gt;
+                        &lt;/<span class="elements">div</span>&gt;
+
+                       
 
                 </div>
                 
                 <div class="experience">
                     
-                    &lt;<span class="elements">p</span><span class="classes"> class</span>=
+                    &lt;<span class="elements">div</span><span class="classes"> class</span>=
                     <span class="quotes intern__element">"degree"</span>&gt;
                     <ul>
-                        <h3>Mesa Community College</h3>
+                        <img src="Pictures/logo-rgb-mcc.png" alt="mcc" class="education__img">
+
                         <p class="education__major">
                             Associate of General Studies
                         </p>
@@ -326,7 +374,8 @@
                             -Completed
                         </li>
                     </ul>
-                    &lt;/<span class="elements">p</span>&gt;
+                    &lt;/<span class="elements">div</span>&gt;
+
             </div>
             <!--experience 
                     <a href="https://www.mesacc.edu/about" target="_blank" class="portfolio__item">
@@ -369,9 +418,8 @@
                              <ul>
                                
                                  <h3 class="job__name">Software Engineer</h3>
-                                 <p class="education__major">
-                                    Infosys
-                                 </p>
+                                 <img src="Pictures/pngwing.com.png" alt="infossys" class="experience__img">
+
                                 
                                  <li class="education__status">
                                     Summer 2024
@@ -389,10 +437,10 @@
                              <ul>
                                
                                  <h3 class="job__name">Software Engineer</h3>
-                                 <p class="education__major">
-                                    Cloverleaf Networks
-                                 </p>
-                                
+                                 <div style="display: flex; align-items: center;">
+                                    <img src="Pictures/[removal.ai]_36b808cb-be1e-482c-b22a-1fd8a4cf2161_cloverLogo.png" alt="infossys" style="width: 50px; margin-top: 15px;">
+                                    <span style="color:rgb(82, 188, 82); margin-top: 15px;">Cloverleaf Networks</span>
+                                   </div>
                                  <li class="education__status">
                                     August 2023 - March 2024
                                  </li>
@@ -409,10 +457,10 @@
                              <ul>
                                
                                  <h3 class="job__name">Software Engineer</h3>
-                                 <p class="education__major">
-                                    Cloverleaf Networks
-                                 </p>
-                                
+                                 <div style="display: flex; align-items: center;">
+                                 <img src="Pictures/[removal.ai]_36b808cb-be1e-482c-b22a-1fd8a4cf2161_cloverLogo.png" alt="infossys" style="width: 50px; margin-top: 15px;">
+                                 <span style="color:rgb(82, 188, 82); margin-top: 15px;">Cloverleaf Networks</span>
+                                </div>
                                  <li class="education__status">
                                     Summer 2023
                                  </li>
@@ -429,9 +477,7 @@
                              <ul>
                                
                                  <h3 class="job__name">Business Engineer</h3>
-                                 <p class="education__major">
-                                    Boeing
-                                 </p>
+                                 <img src="Pictures/Boeing_full_logo.svg.png" alt="infossys" class="experience__img">
                                 
                                  <li class="education__status">
                                     Summer 2022
@@ -448,9 +494,7 @@
                         <span class="quotes intern__element">"internship"</span>&gt;
                          <ul>
                              <h3 class="job__name">Data Analyst</h3>
-                             <p class="education__major">
-                                 Shamrock Foods
-                             </p>
+                             <img src="Pictures/100-years.webp" alt="infossys" class="experience__img_sham">
                              
                              <li class="education__status">
                                  Summer 2021
@@ -510,6 +554,49 @@
      
                      </div>
 
+                     <div class="experience">
+                         
+                        &lt;<span class="elements">ul</span><span class="classes"> class</span>=
+                        <span class="quotes intern__element">"skills"</span>&gt;
+                             <ul class="skills__list">
+                               
+                                <p class="skills">
+                                     C#
+                                </p>
+                                <p class="skills"> 
+                                    AWS
+                                </p>
+                                <p class="skills">
+                                    Golang
+                                </p>
+                               
+                                 
+                             </ul>
+                             &lt;/<span class="elements">ul</span>&gt;
+     
+                     </div>
+
+                     <div class="experience">
+                         
+                        &lt;<span class="elements">ul</span><span class="classes"> class</span>=
+                        <span class="quotes intern__element">"skills"</span>&gt;
+                             <ul class="skills__list">
+                               
+                                <p class="skills">
+                                    Python
+                                </p>
+                                <p class="skills"> 
+                                   SQL
+                                </p>
+                                <p class="skills">
+                                   .NET
+                                </p>
+                               
+                                 
+                             </ul>
+                             &lt;/<span class="elements">ul</span>&gt;
+     
+                     </div>
 
 
                      
@@ -525,7 +612,7 @@
                                 <i class="fa-brands fa-css3-alt"></i> CSS
 
                                 <p class="skills">
-                                    Prolog
+                                    REACT
                                 </p>
                             
                          </ul>
@@ -615,7 +702,7 @@
     &lt;<span class="elements">h3</span>
     <span class="classes">class </span>=<span class="quotes"> "portfolio__section" </span>&gt;
 
-    <span class="section__title section__title--experiences section__title--portfolio">My Portfolio</span> 
+    <span class="section__title section__title--experiences section__title--portfolio">Projects</span> 
     &lt;/<span class="elements">h3</span>&gt;
 
     
@@ -624,41 +711,43 @@
 
         <!-- project_item-->
 
-        <a href="html/portfolio-item1.html" class="portfolio__item">
-            <img src="Pictures/My project-1.jpg" alt="website project"
+        <a href="/html/portfolio-item1.html" class="portfolio__item" onclick="loadContent(event, '/html/portfolio-item1.html')">
+            <img src="Pictures/Screenshot 2024-08-20 at 4.27.34 PM.png" alt="website project"
             class="portfolio__img">
+            Portfolio Website
         </a>
         <!-- project_item-->
 
-        <a href="html/portfolio-item2.html" class="portfolio__item">
+        <a href="/html/portfolio-item2.html" class="portfolio__item" onclick="loadContent(event, '/html/portfolio-item2.html')">
             <img src="Pictures/My project (1).png" alt="Pictures/project_img_2.jpeg"
             class="portfolio__img">
+            Hero Creation GUI
         </a>
-         <!-- project_item
+        
 
-        <a href="portfolio-item3.html" class="portfolio__item">
-            <img src="Pictures/fake_img2.jpeg" alt="Pictures/project_img_2.jpeg"
-            class="portfolio__img">
+        <a href="/html/portfolio-item3.html" class="portfolio__item" onclick="loadContent(event, '/html/portfolio-item3.html')">
+            <img src="/Pictures/Screenshot 2024-08-20 at 4.33.11 PM.png" alt="project pic"  class="portfolio__img">
+            Company Task Manager
         </a>
-         project_item
+        
 
-        <a href="portfolio-item4.html" class="portfolio__item">
-            <img src="Pictures/fake_img3.jpg" alt="Pictures/project_img_2.jpeg"
-            class="portfolio__img">
+        <a href="/html/portfolio-item4.html" class="portfolio__item" onclick="loadContent(event, '/html/portfolio-item4.html')">
+            <img src="/Pictures/pacman_multi_agent.png" alt="project pic"  class="portfolio__img">
+            AI Guided Pacman
         </a>
-        project_item
+        
 
-        <a href="portfolio-item5.html" class="portfolio__item">
-            <img src="Pictures/fake_img4.webp" alt="Pictures/project_img_2.jpeg"
-            class="portfolio__img">
+        <a href="/html/portfolio-item5.html" class="portfolio__item" onclick="loadContent(event, '/html/portfolio-item5.html')">
+            <img src="/Pictures/calculatorpic.png" alt="project pic"  class="portfolio__img">
+            Calculator 
         </a>
-         project_item
+        
 
-        <a href="portfolio-item6.html" class="portfolio__item">
-            <img src="Pictures/fake_img5.jpeg" alt="Pictures/project_img_2.jpeg"
-            class="portfolio__img">
+        <a href="/html/portfolio-item6.html" class="portfolio__item" onclick="loadContent(event, '/html/portfolio-item6.html')">
+            <img src="/Pictures/Screenshot 2024-08-20 at 4.59.49 PM.png" alt="project pic"  class="portfolio__img">
+            Chat Application
         </a>
-    -->
+ 
     </div>
 
 </section>

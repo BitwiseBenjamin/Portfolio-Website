@@ -126,6 +126,46 @@
   }
 
 
+/* Styling the scrollbar for the .content-window */
+.content-window::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+  height: 12px; /* Height of the horizontal scrollbar */
+  background-color: var(--clr-dark); /* Background color of the scrollbar track */
+}
+
+.content-window::-webkit-scrollbar-thumb {
+  background-color: #555; /* Color of the scrollbar handle */
+  border-radius: 0px; /* Removes the roundness to make it square */
+}
+
+.content-window::-webkit-scrollbar-track {
+  background-color: #242323; /* Color of the track (background) */
+}
+
+/* Optional: Same styling for .tab-container, if needed */
+.tab-container::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+  height: 12px; /* Height of the horizontal scrollbar */
+  background-color: var(--clr-dark); /* Background color of the scrollbar track */
+}
+
+.tab-container::-webkit-scrollbar-thumb {
+  background-color: #555; /* Color of the scrollbar handle */
+  border-radius: 0px; /* Removes the roundness to make it square */
+}
+
+.tab-container::-webkit-scrollbar-track {
+  background-color: #242323; /* Color of the track (background) */
+}
+
+.tab-container::-webkit-scrollbar-corner {
+  background-color: #242323; /* Color of the scrollbar corner */
+}
+
+
+
+
+
 /*file exloerer */
 
 .file-explorer {
@@ -184,6 +224,12 @@
   margin-left: 50px;
   display: none; /* Hide sublist by default */
 
+}
+
+.file-explorer__sublist li a {
+  white-space: nowrap;          /* Prevent text wrapping */
+  overflow: hidden;             /* Hide overflow */
+  text-overflow: ellipsis; 
 }
 
 .file-explorer__file a {
@@ -289,8 +335,16 @@ body {
 
 /*extra file navigator */
 
+.media-folder-file div{
+  color:rgb(175, 174, 174);
+}
+
+
+
+
 .outer_file{
   margin-left: 37px;
+  color:rgb(147, 146, 146);
 }
 
 .outer_file a{
@@ -336,10 +390,11 @@ body {
   }
   
 
-
-  .line-1{
+  .line-1 {
+    display: flex;
+    justify-content: center;
     position: relative;
-    top: 50%;  
+    top: 50%;
     width: 24em;
     margin: 0 auto;
     border-right: 2px solid var(--clr-dark);
@@ -347,7 +402,16 @@ body {
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
-    transform: translateY(-50%);    
+    transform: translateY(-50%);
+    flex-wrap: wrap; /* Allows content to wrap naturally */
+}
+
+.line-1-hi,
+.line-1-name {
+    white-space: nowrap;
+    overflow: hidden;
+    flex-shrink: 0; /* Prevent shrinking */
+    display: inline-block; /* Ensure inline behavior */
 }
 
 .anim-typewriter1{
@@ -568,7 +632,30 @@ body {
 }
 
 
- 
+.education__img {
+  width: 400px;
+  margin-top: 20px;
+}
+
+.job__name{
+  white-space: nowrap;
+  font-size:x-large;
+}
+
+.my-experiences2 div.experiences {
+  display: flex;
+  flex-wrap: wrap; /* Prevent wrapping of items, forcing them to stay in one line */
+  
+  gap: 40px; /* Optional: Add some space between the experience items */
+}
+
+.my-experiences2 div.experiences div.experience {
+  flex: 0 0 auto; /* Prevent the flex items from shrinking, keeping their size */
+  white-space: nowrap; /* Ensure the text inside each experience doesn't wrap */
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 
   .intro__img{
     box-shadow: var(--bs);
@@ -717,7 +804,17 @@ body {
   margin-bottom: -0.6em;
 }
 
- 
+ .experience__img{
+  width:200px;
+  margin-top: 20px;
+
+ }
+
+ .experience__img_sham{
+  width:150px;
+  margin-top: 20px;
+
+ }
 
   .experiences{
     margin-bottom: -1em;
@@ -727,15 +824,14 @@ body {
     .experiences{
       
         display:flex;
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
+       
+       
         justify-content: center;
         
         
     }
 .experience{
-    min-width: 200px;
+   
    vertical-align: center;
 }
    
@@ -854,12 +950,15 @@ padding-top: 20px;
 }
 
 .portfolio__item{
-    background-color: var(--clr-accent);
+  padding: 1em;
+    background-color: var(--clr-dark);
    overflow: hidden;
-   
+   color: white;
+   text-decoration: none;
 }
 
 .portfolio__img{
+    height: 300px;
     transition: 
     transform 750ms cubic-bezier(.5,0, .5, 1),
     opacity 250ms linear;
@@ -939,10 +1038,15 @@ opacity: .7;
 .intro__projects{
 background-color: var(--clr-dark);
 }
+.project-description{
+  font-size: 50px;
+}
+
 .intro__img--projects{
+  margin-top: 5em;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 5em;
+  margin-bottom: 1em;
   max-width: 600px;
 }
 .portfolio-item-individual {

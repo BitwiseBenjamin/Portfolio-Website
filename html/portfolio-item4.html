@@ -11,196 +11,272 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">  
 
     <link rel="stylesheet"
-    href="css/portfolioStyles.css">
+    href="/css/portfolioStyles.css">
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+
+    <link rel="icon"href="/favicon-16x16.png"type="image/png">
+
+    <link rel="stylesheet" href="/css/tabStyles.css"/>
+    <link rel="stylesheet" href="/css/content-window.css"/>
 
     <script src="https://kit.fontawesome.com/31cad9bf27.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-            <i class="fa-solid fa-code"></i>
-        </div>
 
-        <button class="nav-toggle" aria-label="toggle navigation">
-            <span class="hamburger">
+    <div class="sidebar">
+        <ul class="sidebar__list">
+            <li class="sidebar__item">
+                <a href="/index.html" class="sidebar__link">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="https://github.com/BitwiseBenjamin" target="_blank" class="sidebar__link">
+                    <i class="fa-brands fa-github"></i>
+                    
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="https://www.linkedin.com/in/zachary-rundstrom/" target="_blank" class="sidebar__link">
+                    <i class="fa-brands fa-linkedin"></i>
+                   
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="mailto:rundstrombenjamin@gmail.com"
+                 class="sidebar__link">
+                    <i class="fa-solid fa-envelope"></i>
+                    
+                </a>
+            </li>
+        </ul>
+    </div>
 
+    <!-- File Explorer -->
+    <div class="file-explorer">
+        <ul class="file-explorer__list">
+            <li class="file-explorer__item">
+                <div class="file-explorer__folder outer_file_main">
+                       
+                        <div style="color:rgb(155, 155, 155); padding-left: 20px; font-size: medium; padding-top:10px; padding-bottom: 5px;">EXPLORER</div>
+                </div>
+                <ul class="file-explorer__sublist"></ul>
+            </li>
+            <li class="file-explorer__item">
+                <div class="file-explorer__folder outer_file_main">
+                        <i class="fa-solid fa-angle-down"></i>
+                        <div class="main-file">Portfolio_Website</div>
+                </div>
+                <ul class="file-explorer__sublist">
+            
+                </ul>
+            </li>
+    <li class="file-explorer__item">
+    <div class="file-explorer__folder outer_file index">
+    <div class="icon">
+        <i class="fa-brands fa-html5" style="color: rgb(255, 77, 0);"></i> 
+    </div>
+        <a href="/index.html" onclick="loadContent(event, '/index.html')">index.html</a>
+    </div>
+    <ul class="file-explorer__sublist">
+
+    </ul>
+    </li><li class="file-explorer__item">
+        <div class="file-explorer__folder">
+            <span class="file-explorer__chevron">
+                <i class="fa-solid fa-angle-right"></i>
             </span>
-        </button>
+            <i class="fa-brands fa-square-js folder-icon fa-beat" style="color: rgb(255, 247, 0);"></i> 
+            Navigation
+    </div>
+    <ul class="file-explorer__sublist">
+        <li class="file-explorer__file">
+            <div class="icon">
+            <i class="fa-solid fa-j fa-2xs" style="color: rgb(255, 247, 0); "></i> 
+            <i class="fa-solid fa-s fa-2xs" style="color: rgb(255, 247, 0);"></i> 
+            </div>
+            <a href="/index.html#experiences" onclick="loadContent(event, '/index.html#experiences')">Experience</a>
+        </li>
+        <li class="file-explorer__file">
+            <div class="icon">
+            <i class="fa-solid fa-j fa-2xs" style="color: rgb(255, 247, 0); "></i> 
+            <i class="fa-solid fa-s fa-2xs" style="color: rgb(255, 247, 0);"></i> 
+            </div>
+            <a href="/index.html#about" onclick="loadContent(event, '/index.html#about')">About Me</a>
+        </li>
+        <li class="file-explorer__file">
+            <div class="icon">
+            <i class="fa-solid fa-j fa-2xs fa-bounce" style="color: rgb(255, 247, 0); "></i> 
+            <i class="fa-solid fa-s fa-2xs fa-bounce" style="color: rgb(255, 247, 0);"></i> 
+            </div>
+            <a href="/index.html#portfolio" onclick="loadContent(event, '/index.html#portfolio')">Projects</a>
+        </li>
+    </ul>
+    </li>
+    <li class="file-explorer__item">
+    <div class="file-explorer__folder">
+        <span class="file-explorer__chevron">
+            <i class="fa-solid fa-angle-right"></i>
+        </span>
+        <i class="fa-solid fa-folder-open folder-icon fa-beat" style="color: rgb(44, 130, 251);"></i> 
+        Projects
+    </div>
+    <ul class="file-explorer__sublist">
+        <li class="file-explorer__file">
+            <div class="icon">
+            <i class="fa-brands fa-css3-alt" style="color: rgb(44, 130, 251);"></i> 
+            </div>
+            <a href="/html/portfolio-item1.html" onclick="loadContent(event, '/html/portfolio-item1.html')">Project 1</a></li>
+        <li class="file-explorer__file">
+            <div class="icon">
+            <i class="fa-brands fa-css3-alt fa-bounce" style="color: rgb(44, 130, 251);"></i> 
+            </div>
+            <a href="/html/portfolio-item2.html" onclick="loadContent(event, '/html/portfolio-item2.html')">Project 2</a></li>
+        <!-- Add more projects as needed -->
+    </ul>
+    </li><!-- Add more folders and files as needed -->
+
+    <li class="file-explorer__item media-folder-file">
+        <div class="file-explorer__folder">
+            <span class="file-explorer__chevron">
+                <i class="fa-solid fa-angle-right"></i>
+            </span>
+            <i class="fa-solid fa-folder folder-icon" style="color: rgba(207, 153, 4, 0.832);"></i> 
+            Media
+        </div>
+        <ul class="file-explorer__sublist">
+            <li class="file-explorer__file media-folder-file">
+                <div class="icon">
+                <i class="fa-solid fa-image" style="color: rgb(4, 210, 148);"></i> 
+                </div>
+                <div class="file-name">Main.png</div>
+            </li>
+            <li class="file-explorer__file media-folder-file">
+                <div class="icon">
+                <i class="fa-solid fa-image" style="color: rgb(4, 210, 148);"></i> 
+                </div>
+                <div class="file-name">About-Me.png</div>
+            </li>
+        </ul>
+    </li>
+        
+        <li class="file-explorer__item">
+            <div class="file-explorer__folder outer_file">
+                <div class="icon">
+                <i class="fa-solid fa-star" style="background-color: rgb(255, 77, 0); color: white;"></i> 
+                </div>
+                <div class="file-name">favicon.ico</div>
+            </div>
+            <ul class="file-explorer__sublist"></ul>
+        </li>
+
+        <li class="file-explorer__item">
+            <div class="file-explorer__folder outer_file">
+                <div class="icon">
+                <i class="fa-brands fa-npm" style="color: rgb(241, 20, 0);"></i> 
+                </div>
+                <div class="file-name">package-lock.json</div>
+            </div>
+            <ul class="file-explorer__sublist"> </ul>
+        </li>
+
+        <li class="file-explorer__item">
+            <div class="file-explorer__folder outer_file">
+                <div class="icon">
+                <i class="fa-brands fa-npm" style="color: rgb(247, 4, 4);"></i> 
+                </div>
+                <div class="file-name">package.json</div>
+            </div>
+            <ul class="file-explorer__sublist"> </ul>
+        </li>
+
+        <li class="file-explorer__item">
+            <div class="file-explorer__folder outer_file">
+                <div class="icon">
+                <i class="fa-brands fa-git" style="color: rgb(82, 88, 105);"></i> 
+                </div>
+                <div class="file-name">.gitignore</div>
+            </div>
+            <ul class="file-explorer__sublist"> </ul>
+        </li>
+
+        <li class="file-explorer__item">
+            <div class="file-explorer__folder outer_file">
+                <div class="icon">
+                <i class="fa-solid fa-m fa-2xs" style="color: rgba(115, 85, 59, 0.988);"></i> 
+                <i class="fa-solid fa-arrow-down fa-2xs" style="color: rgba(115, 85, 59, 0.988);"></i>
+                </div> 
+                <div class="file-name">README.md</div>
+            </div>
+            <ul class="file-explorer__sublist"> </ul>
+        </li>
+
+    </ul>
+    </div>
+
+    <!-- Header of tabs -->
+        
+        <div class="tab-container">
+            <div class="tab " style="position: relative; display: flex; justify-content: space-between; align-items: center;">
+                
+                    
+                    <a class="tab-link" href="/index.html" onclick="loadContent(event, '/index.html')">
+                        <i class="fa-brands fa-html5" style="color: rgb(255, 77, 0);"></i> 
+                        index.html
+                    </a>
+                
+                <span class="close-tab">
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+            </div>
+        </div>
+    
 
 
-
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
-                <li class="nav__item"><a href="index.html#experiences" class="nav__link">My Experience</a></li>
-                <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
-                <li class="nav__item"><a href="index.html#portfolio" class="nav__link">My Portfolio</a></li>
-            </ul>
-        </nav>
-
-
-    </header>
+   <div class="content-window">
 
         <!-- Intro-->
         <section class="intro intro__projects">
 
+ 
+            <img src="/Pictures/pacman_multi_agent.png" alt="project pic" class="intro__img--projects">
 
-            <img src="Pictures/websiteimg_1.png" alt="project pic" class="intro__img--projects">
-
-       
+            <p class="project__lang">
             &lt;<span class="elements">p</span> <span class="classes">class</span>=<span class="quotes">"title"</span>
             <span class="section__title section__title--intro">
-                Programming with<strong> HTML, CSS </strong>, and <strong>JavaScript</strong>
+                <strong>AI Guided Pacman</strong>
             </span>
             &lt;/<span class="elements">p</span>&gt;
-
-        <p class="project__lang">
-            &lt;<span class="elements">p</span> <span class="classes">class</span>=<span class="quotes">"subtitle"</span>
-            
-            <span class="section__subtitile section__title--intro">Portfolio Website</span>
-            &lt;/<span class="elements">p</span>&gt;
-
         </p>
-
-           
-       
-
-<!-- Portfolio item info-->
-
-
-<div class="portfolio-item-individual">
-    <p>
-To begin this project, I dove into several FreeCodeCamp website building videos to gain a solid understanding of website development.
-From there it was stackOverflow, ChatGPT, and YouTube that helped me create what you see before you.
-        </p>
-    <img src="Pictures/websiteimg_1.png" alt="" class="portfolio-img">
-    <p>
-        For the landing page of the website, I kept the color and design neat and professional.
-        The use of the texting animation is the highlight of this page, and sets the tone and style of the rest of the site.
         
-    </p>
-    <img src="Pictures/websiteCode_img1.png" alt="" class="portfolio-img">
-    <p>
-        Here you can see that the animation was acheived by encasing the text in a paragraph element with the class .anim-typewriter. 
-        You can also note that to achieve the different color words and html layout the use of & lt; and spans is implimented throughout the project.
-    </p>
-
-        <img src="Pictures/websiteCSS_img1.png" alt="" class="portfolio-img">
         <p>
-            In this picture you can see that @keyframes typewriter animation is used within the .anim-typewriter class to give off the typing effect.
-            The @keyframes blinkTextCursor is used in the animation to acheive the blinking cursor. 
-            <p>
-                There was a lot of difficulty in this project when trying to figure out how to adapt
-                 this animation to each situation. It was ultimatly decided to apply some different animation settings to each class/area of text.
-            </p>
+            &lt;<span class="elements">p</span> <span class="classes">class</span>=<span class="quotes">"language"</span>
+            
+            <span class="project-description">Python</span>
+            &lt;/<span class="elements">p</span>&gt;
         </p>
+        
+
+
+        <p>
+            &lt;<span class="elements">p</span> <span class="classes">class</span>=<span class="quotes">"Description"</span>
+            
+            <span class="">Implimented multiple tracking and decision algorithms to allow pacman 
+                to navigate his environment and eventially allways win</span>
+            &lt;/<span class="elements">p</span>&gt;
+        </p>
+      
+
+    </div>     
        
 
-        <img src="Pictures/website_img2.png" alt="" class="portfolio-img">
-        <p>
-            For the Education, Internship, and Skills section, most of the time was spent finding a way to display the information aestheticly, 
-            and adding a download link for my resume for convenience.
-        </p>
 
-            <img src="Pictures/websiteCode_img2.png" alt="" class="portfolio-img">
-            <p>
-              The general structure for each section is shown above. ul elements are used to display the information, but two div's within a div are used to 
-              dictate the structure of the information.
-            </p>
-
-                <img src="Pictures/website_img3.png" alt="" class="portfolio-img">
-                <p>
-                For the portfolio section of this project, a flex-box with images representing each project was the best approach to 
-                keep the design simple, yet elegant.     
-                
-                </p>
-
-                    <img src="Pictures/websiteCSS_img3.png" alt="" class="portfolio-img">
-                    <p>
-
-                        Above you can note the use of hover with the transform and transition functionalities, giving off the zoom in and color change effect when 
-                        hovering over the image.
-                    </p>
-
-                        <img src="Pictures/website_img4.png" alt="" class="portfolio-img">
-                        <p>
-                        For the footer the emphasis was put on making it look clean, and adding in stylish logos for the socials.    
-                        </p>
-
-                            <img src="Pictures/websiteCode_img4.png" alt="" class="portfolio-img">
-                            <p>
-                                Above you can see the html structure of the footer, and its use of anchor elements with i elements to provide a link and 
-                                display the company logo thanks to fontAwesome.
-                            </p>
-
-                                <img src="Pictures/website_img5.png" alt="" class="portfolio-img">
-                                <p>
-                                    Lastly is the Hamburger and nav elemtents that allow you to navigate through the website.
-                                </p>
-                                    
-                                    <img src="Pictures/websiteCSS_img5.png" alt="" class="portfolio-img">
-                                    <p>
-                                        Above there is the .nav-open class which is called on using javascript. This opens the nav widow, which become the whole page.
-                                        There is also the code above that shows the transformation put on the hamburger when it is clicked, so it turns into an X shape.
-                                    </p>
-
-                                    <img src="Pictures/website_js_img1.png" alt="" class="portfolio-img">
-                                    <p>
-                                        The Javascript above is used to activate the .nav-open class when the hamburger is clicked on, using the event listener.
-                                        </p>
-</div>
-
-
-
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-
-    
-<footer class="footer">
-
-    <a href="mailto:rundstrombenjamin@gmail.com" class="footer__Link">rundstrombenjamin@gmail.com</a>
-    <ul class="social-list">
-        <li class="social-list__item">
-            <a class="social-list__link" href="http://LinkedIn.com">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-        </li>
-        <li class="social-list__item">
-            <a class="social-list__link" href="http://GitHub.com">
-                <i class="fa-brands fa-github"></i>
-            </a>
-        </li>
-        <li class="social-list__item">
-            <a class="social-list__link" href="http://Instagram.com">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-        </li>
-        <li class="social-list__item">
-            <a class="social-list__link" href="http://StackOverflow.com">
-                <i class="fa-brands fa-stack-overflow"></i>
-            </a>
-        </li>
-
-    </ul>
-</footer>
-
-
-<script src="js/index.js"></script>
+<script src="/js/index.js"></script>
 
 </body>
 </html>

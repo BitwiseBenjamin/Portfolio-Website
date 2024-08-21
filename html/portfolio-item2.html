@@ -15,161 +15,273 @@
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
 
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+
+    <link rel="icon"href="/favicon-16x16.png"type="image/png">
+
+    <link rel="stylesheet" href="/css/tabStyles.css"/>
+    <link rel="stylesheet" href="/css/content-window.css"/>
+
     <script src="https://kit.fontawesome.com/31cad9bf27.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-            <i class="fa-solid fa-code"></i>
-        </div>
 
-        <button class="nav-toggle" aria-label="toggle navigation">
-            <span class="hamburger">
+    <div class="sidebar">
+        <ul class="sidebar__list">
+            <li class="sidebar__item">
+                <a href="/index.html" class="sidebar__link">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="https://github.com/BitwiseBenjamin" target="_blank" class="sidebar__link">
+                    <i class="fa-brands fa-github"></i>
+                    
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="https://www.linkedin.com/in/zachary-rundstrom/" target="_blank" class="sidebar__link">
+                    <i class="fa-brands fa-linkedin"></i>
+                   
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="mailto:rundstrombenjamin@gmail.com"
+                 class="sidebar__link">
+                    <i class="fa-solid fa-envelope"></i>
+                    
+                </a>
+            </li>
+        </ul>
+    </div>
 
-            </span>
-        </button>
-
-
-
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__item"><a href="/index.html" class="nav__link">Home</a></li>
-                <li class="nav__item"><a href="/index.html#experiences" class="nav__link">My Experience</a></li>
-                <li class="nav__item"><a href="/index.html#about" class="nav__link">About me</a></li>
-                <li class="nav__item"><a href="/index.html#portfolio" class="nav__link">My Portfolio</a></li>
-            </ul>
-        </nav>
-
-
-    </header>
-
-        <!-- Intro-->
-        <section class="intro intro__projects">
-
-
-            <img src="/Pictures/HeroPane_img.png" alt="project pic" class="intro__img--projects">
-
-       
-            &lt;<span class="elements">h1</span> <span class="classes">class</span>=<span class="quotes">"title"</span>
-            <span class="section__title section__title--intro">
-                Programming with<strong> Java </strong> and <strong>JavaFX</strong>
-            </span>
-            &lt;/<span class="elements">h1</span>&gt;
-
-        <p class="project__lang">
-            &lt;<span class="elements">h2</span> <span class="classes">class</span>=<span class="quotes">"subtitle"</span>
+    <!-- File Explorer -->
+    <div class="file-explorer">
+        <ul class="file-explorer__list">
+            <li class="file-explorer__item">
+                <div class="file-explorer__folder outer_file_main">
+                       
+                        <div style="color:rgb(155, 155, 155); padding-left: 20px; font-size: medium; padding-top:10px; padding-bottom: 5px;">EXPLORER</div>
+                </div>
+                <ul class="file-explorer__sublist"></ul>
+            </li>
+            <li class="file-explorer__item">
+                <div class="file-explorer__folder outer_file_main">
+                        <i class="fa-solid fa-angle-down"></i>
+                        <div class="main-file">Portfolio_Website</div>
+                </div>
+                <ul class="file-explorer__sublist">
             
-            <span class="section__subtitile section__title--intro">Hero Creation and Team Building GUI </span>
-            &lt;/<span class="elements">h2</span>&gt;
+                </ul>
+            </li>
+    <li class="file-explorer__item">
+    <div class="file-explorer__folder outer_file index">
+    <div class="icon">
+        <i class="fa-brands fa-html5" style="color: rgb(255, 77, 0);"></i> 
+    </div>
+        <a href="/index.html" onclick="loadContent(event, '/index.html')">index.html</a>
+    </div>
+    <ul class="file-explorer__sublist">
 
-        </p>
+    </ul>
+    </li><li class="file-explorer__item">
+        <div class="file-explorer__folder">
+            <span class="file-explorer__chevron">
+                <i class="fa-solid fa-angle-right"></i>
+            </span>
+            <i class="fa-brands fa-square-js folder-icon fa-beat" style="color: rgb(255, 247, 0);"></i> 
+            Navigation
+    </div>
+    <ul class="file-explorer__sublist">
+        <li class="file-explorer__file">
+            <div class="icon">
+            <i class="fa-solid fa-j fa-2xs" style="color: rgb(255, 247, 0); "></i> 
+            <i class="fa-solid fa-s fa-2xs" style="color: rgb(255, 247, 0);"></i> 
+            </div>
+            <a href="/index.html#experiences" onclick="loadContent(event, '/index.html#experiences')">Experience</a>
+        </li>
+        <li class="file-explorer__file">
+            <div class="icon">
+            <i class="fa-solid fa-j fa-2xs" style="color: rgb(255, 247, 0); "></i> 
+            <i class="fa-solid fa-s fa-2xs" style="color: rgb(255, 247, 0);"></i> 
+            </div>
+            <a href="/index.html#about" onclick="loadContent(event, '/index.html#about')">About Me</a>
+        </li>
+        <li class="file-explorer__file">
+            <div class="icon">
+            <i class="fa-solid fa-j fa-2xs fa-bounce" style="color: rgb(255, 247, 0); "></i> 
+            <i class="fa-solid fa-s fa-2xs fa-bounce" style="color: rgb(255, 247, 0);"></i> 
+            </div>
+            <a href="/index.html#portfolio" onclick="loadContent(event, '/index.html#portfolio')">Projects</a>
+        </li>
+    </ul>
+    </li>
+    <li class="file-explorer__item">
+    <div class="file-explorer__folder">
+        <span class="file-explorer__chevron">
+            <i class="fa-solid fa-angle-right"></i>
+        </span>
+        <i class="fa-solid fa-folder-open folder-icon fa-beat" style="color: rgb(44, 130, 251);"></i> 
+        Projects
+    </div>
+    <ul class="file-explorer__sublist">
+        <li class="file-explorer__file">
+            <div class="icon">
+            <i class="fa-brands fa-css3-alt" style="color: rgb(44, 130, 251);"></i> 
+            </div>
+            <a href="/html/portfolio-item1.html" onclick="loadContent(event, '/html/portfolio-item1.html')">Project 1</a></li>
+        <li class="file-explorer__file">
+            <div class="icon">
+            <i class="fa-brands fa-css3-alt fa-bounce" style="color: rgb(44, 130, 251);"></i> 
+            </div>
+            <a href="/html/portfolio-item2.html" onclick="loadContent(event, '/html/portfolio-item2.html')">Project 2</a></li>
+        <!-- Add more projects as needed -->
+    </ul>
+    </li><!-- Add more folders and files as needed -->
+
+    <li class="file-explorer__item media-folder-file">
+        <div class="file-explorer__folder">
+            <span class="file-explorer__chevron">
+                <i class="fa-solid fa-angle-right"></i>
+            </span>
+            <i class="fa-solid fa-folder folder-icon" style="color: rgba(207, 153, 4, 0.832);"></i> 
+            Media
+        </div>
+        <ul class="file-explorer__sublist">
+            <li class="file-explorer__file media-folder-file">
+                <div class="icon">
+                <i class="fa-solid fa-image" style="color: rgb(4, 210, 148);"></i> 
+                </div>
+                <div class="file-name">Main.png</div>
+            </li>
+            <li class="file-explorer__file media-folder-file">
+                <div class="icon">
+                <i class="fa-solid fa-image" style="color: rgb(4, 210, 148);"></i> 
+                </div>
+                <div class="file-name">About-Me.png</div>
+            </li>
+        </ul>
+    </li>
+        
+        <li class="file-explorer__item">
+            <div class="file-explorer__folder outer_file">
+                <div class="icon">
+                <i class="fa-solid fa-star" style="background-color: rgb(255, 77, 0); color: white;"></i> 
+                </div>
+                <div class="file-name">favicon.ico</div>
+            </div>
+            <ul class="file-explorer__sublist"></ul>
+        </li>
+
+        <li class="file-explorer__item">
+            <div class="file-explorer__folder outer_file">
+                <div class="icon">
+                <i class="fa-brands fa-npm" style="color: rgb(241, 20, 0);"></i> 
+                </div>
+                <div class="file-name">package-lock.json</div>
+            </div>
+            <ul class="file-explorer__sublist"> </ul>
+        </li>
+
+        <li class="file-explorer__item">
+            <div class="file-explorer__folder outer_file">
+                <div class="icon">
+                <i class="fa-brands fa-npm" style="color: rgb(247, 4, 4);"></i> 
+                </div>
+                <div class="file-name">package.json</div>
+            </div>
+            <ul class="file-explorer__sublist"> </ul>
+        </li>
+
+        <li class="file-explorer__item">
+            <div class="file-explorer__folder outer_file">
+                <div class="icon">
+                <i class="fa-brands fa-git" style="color: rgb(82, 88, 105);"></i> 
+                </div>
+                <div class="file-name">.gitignore</div>
+            </div>
+            <ul class="file-explorer__sublist"> </ul>
+        </li>
+
+        <li class="file-explorer__item">
+            <div class="file-explorer__folder outer_file">
+                <div class="icon">
+                <i class="fa-solid fa-m fa-2xs" style="color: rgba(115, 85, 59, 0.988);"></i> 
+                <i class="fa-solid fa-arrow-down fa-2xs" style="color: rgba(115, 85, 59, 0.988);"></i>
+                </div> 
+                <div class="file-name">README.md</div>
+            </div>
+            <ul class="file-explorer__sublist"> </ul>
+        </li>
+
+    </ul>
+    </div>
+
+    <!-- Header of tabs -->
+        
+        <div class="tab-container">
+            <div class="tab " style="position: relative; display: flex; justify-content: space-between; align-items: center;">
+                
+                    
+                    <a class="tab-link" href="/index.html" onclick="loadContent(event, '/index.html')">
+                        <i class="fa-brands fa-html5" style="color: rgb(255, 77, 0);"></i> 
+                        index.html
+                    </a>
+                
+                <span class="close-tab">
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+            </div>
+        </div>
+    
+
+ 
+
+            <div class="content-window">
+
+                <!-- Intro-->
+                <section class="intro intro__projects">
+        
+         
+                    <img src="/Pictures/HeroPane_img.png" alt="project pic" class="intro__img--projects">
+        
+                    <p class="project__lang">
+                    &lt;<span class="elements">p</span> <span class="classes">class</span>=<span class="quotes">"title"</span>
+                    <span class="section__title section__title--intro">
+                        <strong>Hero Creation Java FX GUI</strong>
+                    </span>
+                    &lt;/<span class="elements">p</span>&gt;
+                </p>
+                
+                <p>
+                    &lt;<span class="elements">p</span> <span class="classes">class</span>=<span class="quotes">"language"</span>
+                    
+                    <span class="project-description">Java</span>
+                    &lt;/<span class="elements">p</span>&gt;
+                </p>
+                
+                <p>
+                    &lt;<span class="elements">p</span> <span class="classes">class</span>=<span class="quotes">"Technologies"</span>
+                    
+                    <span class="project-description">Java FX</span>
+                    &lt;/<span class="elements">p</span>&gt;
+                </p>
+        
+                <p>
+                    &lt;<span class="elements">p</span> <span class="classes">class</span>=<span class="quotes">"Description"</span>
+                    
+                    <span class="">GUI to create heros, manipulate their stats, and add them to your army</span>
+                    &lt;/<span class="elements">p</span>&gt;
+                </p>
+              
+        
+            </div>    
 
            
        
 
-<!-- Portfolio item info-->
-
-
-<div class="portfolio-item-individual">
-    <p>
-This is one of the first major coding projects I created. It taught me many of the fundimentals of computer programming and inspired me 
-to continue my CompSci journey, despite the difficulties.
-        </p>
-    
-        </p>
-
-        <img src="/Pictures/HeroPane_img.png" alt="" class="portfolio-img">
-        <p>
-            The picture above shows the first page of the project. The GUI template and format was made using JavaFX.
-            There are two distinct sections in this Add Hero page, the first is the left side that allows for input of a hero and their statistics.
-            The right side will display the different heros that you have inputted into te program.
-            The top combo box for hero type is a dropdown box that allows you to select your hero type, mage, fighter etc...
-        </p>
-
-            <img src="/Pictures/heroClassandConstructors.png" alt="" class="portfolio-img">
-            <p>
-              One of the fundimentals this project taught me is the class. The class is very usefull in computer science, here you can 
-              see the initialisation of the class data. Then you can see the public Hero(), which is a constructor for the class and creates the 
-              object. Below this you can see me implement an overloaded constructor that creates a hero object in a different way, based off the 
-              input given.
-            </p>
-
-                <img src="/Pictures/randomEventHandler_img.png" alt="" class="portfolio-img">
-                <p>
-                Something cool that I picked up durring this project is how to use and create eventhandlers. These are used to determine what you 
-                want to transpire if some event were to occur. For the random button handler above, its purpose is generating a random integer 
-                between 50 and 100. This will become the attack level of the hero.
-                
-                </p>
-
-                    <img src="/Pictures/ArmyPane_img.png" class="portfolio-img">
-                    <p>
-                        Here you can see the Create Army page of the GUI. Its functionality is to load all the heros you created from the Hero
-                        Page and give you the option to "add" them to you team, thus combining their statistics and creating your army!
-                    </p>
-
-                    
-
-                        <img src="/Pictures/errorCatchingWheroexisted_img.png" alt="" class="portfolio-img">
-                        <p>
-                           Another important concept exception handling, is shown above. Here is my for loop implimentation of
-                            an exeption handler that is thrown when you create two heros with the same name.
-                        </p>
-
-                            <img src="/Pictures/HeroPane_comboBoxSetup_img.png" alt="" class="portfolio-img">
-                            <p>
-                               Lastly is the code I wrote to create the hero type combo box. This implimentation used the 
-                               combobox methods to create the title, set its action, and its elements.
-                            </p>
-
-                              
-
-
-
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-
-    
-<footer class="footer">
-
-    <a href="mailto:rundstrombenjamin@gmail.com" class="footer__Link">rundstrombenjamin@gmail.com</a>
-    <ul class="social-list">
-        <li class="social-list__item">
-            <a class="social-list__link" href="http://LinkedIn.com">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-        </li>
-        <li class="social-list__item">
-            <a class="social-list__link" href="http://GitHub.com">
-                <i class="fa-brands fa-github"></i>
-            </a>
-        </li>
-        <li class="social-list__item">
-            <a class="social-list__link" href="http://Instagram.com">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-        </li>
-        <li class="social-list__item">
-            <a class="social-list__link" href="http://StackOverflow.com">
-                <i class="fa-brands fa-stack-overflow"></i>
-            </a>
-        </li>
-
-    </ul>
-</footer>
 
 
 <script src="/js/index.js"></script>
